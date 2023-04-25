@@ -1,17 +1,17 @@
 from decouple import config
 from dydx3 import Client
 from web3 import Web3
-from dydx3.constants import (
+from constants import (
   HOST,
   ETHEREUM_ADDRESS,
   DYDX_API_KEY,
   DYDX_API_SECRET,
   DYDX_API_PASSPHRASE,
   STARK_PRIVATE_KEY,
-  HTTP_PROVIDER,  
+  HTTP_PROVIDER,
 )
 
-# Connet to DYDX
+# Connect to DYDX
 def connect_dydx():
 
   # Create Client Connection
@@ -27,16 +27,14 @@ def connect_dydx():
       default_ethereum_address=ETHEREUM_ADDRESS,
       web3=Web3(Web3.HTTPProvider(HTTP_PROVIDER))
   )
- 
- # Confirm Client 
- 
+
+  # Confirm client
   account = client.private.get_account()
   account_id = account.data["account"]["id"]
   quote_balance = account.data["account"]["quoteBalance"]
-  print("Connection Succesfull")
+  print("Connection Successful")
   print("Account ID: ", account_id)
-  print("Quote Balance: ", quote_balance)   
- 
- # Return Code
- 
- return client
+  print("Quote Balance: ", quote_balance)
+
+  # Return Client
+  return client
