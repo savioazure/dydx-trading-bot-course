@@ -30,12 +30,12 @@ def connect_dydx():
  
  # Confirm Client 
  
- account = client.private.get_account()
- account_id = account.data["account"]["id"]
- quote_balance = account.data["account"]["quoteBalance"]
- print("Connection Succesfull")
- print("Account ID: ", account_id)
- print("Quote Balance: ", quote_balance)   
+  account = client.private.get_account()
+  account_id = account.data["account"]["id"]
+  quote_balance = account.data["account"]["quoteBalance"]
+  print("Connection Succesfull")
+  print("Account ID: ", account_id)
+  print("Quote Balance: ", quote_balance)   
  
  # Return Code
  
