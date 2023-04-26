@@ -16,7 +16,10 @@ if __name__ == "__main__":
       
       # Abort all open positions
       
-      if ABORT_ALL_POSITIONS:
-        try:
-          print("Closing all positions...")
-        except Exception as e:
+    if ABORT_ALL_POSITIONS:
+      try:
+        print("Closing all positions...")
+        close_orders = abort_all_positions(client)
+      except Exception as e:
+        print("Error to close all positions : ", e)
+        exit(1)
