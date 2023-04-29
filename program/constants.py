@@ -14,6 +14,8 @@ ABORT_ALL_POSITIONS = True
 
 FIND_COINTEGRATED = True
 
+# Manage Exits
+MANAGE_EXITS = True
 #Place Trades
 PLACE_TRADES = True
 
